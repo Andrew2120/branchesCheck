@@ -6,21 +6,21 @@ on:
 
 jobs:
   mylo_job:
-    if: ${{ github.ref == 'refs/heads/mylo' }}
+    if: ${{github.head_ref == 'mylo'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       # Add steps specific to mylo branch
   deel_job:
-    if: ${{ github.ref == 'refs/heads/deel' }}
+    if: ${{github.head_ref == 'deel'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       # Add steps specific to deel branch
   retail_job:
-    if: ${{ github.ref == 'refs/heads/retail' }}
+    if: ${{github.head_ref == 'retail'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
