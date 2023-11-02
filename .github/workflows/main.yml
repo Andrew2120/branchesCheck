@@ -1,8 +1,8 @@
 name: Run YAML on PR
 on:
   push:
-    branches: [ main, deel, mylo, retail]
-
+    branches:
+      - '*'
 jobs:
   main_job:
     if: ${{ github.head_ref == 'main' }}
@@ -10,25 +10,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      # Add steps specific to main branch
+      - name: Print staff
+        run: echo "Here is Main branch"
   mylo_job:
     if: ${{ github.head_ref == 'mylo' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Print staff
+        run: echo "Here is mylo branch"
       # Add steps specific to mylo branch
-  deel_job:
-    if: ${{ github.head_ref == 'deel' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Add steps specific to deel branch
-  retail_job:
-    if: ${{ github.head_ref == 'retail' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Add steps specific to retail branch
