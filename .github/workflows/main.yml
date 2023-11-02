@@ -2,9 +2,7 @@ name: Run YAML on PR
 on:
   push:
     branches:
-      - retail
-      - mylo
-      - deel
+      '*'
 
 jobs:
   mylo_job:
