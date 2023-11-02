@@ -1,0 +1,37 @@
+name: Run YAML on PR
+on:
+  push:
+    branches:
+      - retail
+      - mylo
+      - deel
+
+jobs:
+  main_job:
+    if: ${{ github.head_ref == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Add steps specific to main branch
+  mylo_job:
+    if: ${{ github.head_ref == 'mylo' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Add steps specific to mylo branch
+  deel_job:
+    if: ${{ github.head_ref == 'deel' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Add steps specific to deel branch
+  retail_job:
+    if: ${{ github.head_ref == 'retail' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Add steps specific to retail branch
