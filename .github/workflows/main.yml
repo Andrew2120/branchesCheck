@@ -1,28 +1,16 @@
-name: Run YAML on PR
+name: Push to master
+
 on:
   push:
     branches:
       - deel
 
 jobs:
-  mylo_job:
-    if: github.ref == 'refs/heads/mylo'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Add steps specific to mylo branch
   deel_job:
     if: github.ref == 'refs/heads/deel'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Add steps specific to deel branch
-  retail_job:
-    if: github.ref == 'refs/heads/retail'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Add steps specific to retail branch
+    # the checkout action persists the passed credentials by default
+    # subsequent git commands will pick them up automatically
+    - uses: actions/checkout@v2
+     # Add steps specific to mylo branch
