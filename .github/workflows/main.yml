@@ -2,10 +2,8 @@ name: Run YAML on PR
 on:
   push:
     branches:
-      - main
       - 'deel'
-      - 'mylo'
-      - 'retail'
+
 jobs:
   main_job:
     if: ${{ github.head_ref == 'main' }}
