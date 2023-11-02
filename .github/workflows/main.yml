@@ -3,7 +3,7 @@ name: Push to master
 on:
   push:
     branches:
-      - '*'
+      - deel
 
 jobs:
   deel_job:
